@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: bot17pro-whatsapp
+    env: node
+    plan: free
+    buildCommand: npm install --no-audit --no-fund --omit=dev --legacy-peer-deps
+    startCommand: npm start
+    autoDeploy: false
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: DATA_DIR
+        value: /var/data
+      - key: AUTH_DIR
+        value: /var/data/auth_info_baileys
